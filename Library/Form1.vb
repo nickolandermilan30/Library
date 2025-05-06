@@ -27,6 +27,9 @@ Public Class Form1
         Catch ex As Exception
             MessageBox.Show("Firebase Init Error: " & ex.Message)
         End Try
+
+        password.UseSystemPasswordChar = False
+
     End Sub
 
     Private Sub login_Click(sender As Object, e As EventArgs) Handles login.Click
@@ -59,7 +62,10 @@ Public Class Form1
                             staffForm.Show()
                         Case "student"
                             Dim studentForm As New StudentPage
+                            studentForm.StudentName = user.firstname & " " & user.lastname
+                            studentForm.StudentEmail = user.email
                             studentForm.Show()
+
                         Case Else
                             MessageBox.Show("Unrecognized role.")
                             Return
@@ -88,6 +94,10 @@ Public Class Form1
         Public Property gender As String
         Public Property role As String
     End Class
+
+    Private Sub showpassword_CheckedChanged(sender As Object, e As EventArgs) Handles showpassword.CheckedChanged
+        password.UseSystemPasswordChar = Not showpassword.Checked
+    End Sub
 
 
 End Class
