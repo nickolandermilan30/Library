@@ -12,6 +12,7 @@ Public Class Publish_book
     }
 
     Private client As IFirebaseClient
+    Public Property StaffRef As StaffPage ' Reference to the StaffPage form
 
     ' Book data class (should match your Firebase structure)
     Public Class BookData
@@ -71,15 +72,24 @@ Public Class Publish_book
         Dim selectedBook = selectedBooks.Values.FirstOrDefault(Function(b) b.title = selectedTitle)
 
         If selectedBook IsNot Nothing Then
-            Dim bookForm As New Book_publish()
-            bookForm.BookTitle = selectedBook.title
-            bookForm.BookAuthor = selectedBook.author
-            bookForm.BookPublisher = selectedBook.publisher
-            bookForm.BookRack = selectedBook.rack
-            bookForm.BookContent = selectedBook.content ' <-- Pass content
-            bookForm.Show()
+            ' If opened from StaffPage, update its fields directly
+            If StaffRef IsNot Nothing Then
+                StaffRef.titleadmin.Text = selectedBook.title
+                StaffRef.authoradmin.Text = selectedBook.author
+                StaffRef.rackadmin.Text = selectedBook.rack
+                StaffRef.publisheradmin.Text = selectedBook.publisher
+                StaffRef.contentadmin.Text = selectedBook.content
+                Me.Close() ' Optionally close the popup after selection
+            Else
+                ' Fallback to opening Book_publish form if used elsewhere
+                Dim bookForm As New Book_publish()
+                bookForm.BookTitle = selectedBook.title
+                bookForm.BookAuthor = selectedBook.author
+                bookForm.BookPublisher = selectedBook.publisher
+                bookForm.BookRack = selectedBook.rack
+                bookForm.BookContent = selectedBook.content
+                bookForm.Show()
+            End If
         End If
-
     End Sub
-
 End Class
