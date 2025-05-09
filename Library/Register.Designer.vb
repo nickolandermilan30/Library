@@ -30,7 +30,6 @@ Partial Class Register
         Label3 = New Label()
         Label4 = New Label()
         lastname = New TextBox()
-        Label5 = New Label()
         role = New ComboBox()
         Label6 = New Label()
         Label7 = New Label()
@@ -40,7 +39,6 @@ Partial Class Register
         gender = New ComboBox()
         regbutton = New Button()
         back = New Button()
-        suffix = New ComboBox()
         SuspendLayout()
         ' 
         ' firstname
@@ -124,19 +122,8 @@ Partial Class Register
         lastname.Location = New Point(582, 324)
         lastname.Multiline = True
         lastname.Name = "lastname"
-        lastname.Size = New Size(170, 31)
+        lastname.Size = New Size(342, 31)
         lastname.TabIndex = 9
-        ' 
-        ' Label5
-        ' 
-        Label5.Anchor = AnchorStyles.Top
-        Label5.AutoSize = True
-        Label5.Font = New Font("Rockwell", 20.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label5.Location = New Point(769, 324)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(90, 31)
-        Label5.TabIndex = 12
-        Label5.Text = "Suffix:"
         ' 
         ' role
         ' 
@@ -239,21 +226,11 @@ Partial Class Register
         back.Text = "Back"
         back.UseVisualStyleBackColor = False
         ' 
-        ' suffix
-        ' 
-        suffix.Anchor = AnchorStyles.Top
-        suffix.FormattingEnabled = True
-        suffix.Location = New Point(865, 327)
-        suffix.Name = "suffix"
-        suffix.Size = New Size(59, 23)
-        suffix.TabIndex = 22
-        ' 
         ' Register
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1071, 762)
-        Controls.Add(suffix)
         Controls.Add(back)
         Controls.Add(regbutton)
         Controls.Add(gender)
@@ -263,7 +240,6 @@ Partial Class Register
         Controls.Add(Label7)
         Controls.Add(Label6)
         Controls.Add(role)
-        Controls.Add(Label5)
         Controls.Add(Label4)
         Controls.Add(lastname)
         Controls.Add(passwordreg)
@@ -287,7 +263,6 @@ Partial Class Register
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents lastname As TextBox
-    Friend WithEvents Label5 As Label
     Friend WithEvents role As ComboBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
@@ -297,5 +272,4 @@ Partial Class Register
     Friend WithEvents gender As ComboBox
     Friend WithEvents regbutton As Button
     Friend WithEvents back As Button
-    Friend WithEvents suffix As ComboBox
 End Class

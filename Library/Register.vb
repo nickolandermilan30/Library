@@ -29,7 +29,6 @@ Public Class Register
         ' Populate dropdowns
         role.Items.AddRange({"Admin", "Staff", "Student"})
         gender.Items.AddRange({"Male", "Female"})
-        suffix.Items.AddRange({"Jr", "Sr"})
     End Sub
 
 
@@ -68,7 +67,6 @@ Public Class Register
 
         If String.IsNullOrWhiteSpace(firstname.Text) OrElse
        String.IsNullOrWhiteSpace(lastname.Text) OrElse
-       String.IsNullOrWhiteSpace(suffix.Text) OrElse
        String.IsNullOrWhiteSpace(emailreg.Text) OrElse
        String.IsNullOrWhiteSpace(passwordreg.Text) OrElse
        String.IsNullOrWhiteSpace(age.Text) OrElse
@@ -82,7 +80,6 @@ Public Class Register
         Dim user As New With {
         .firstname = firstname.Text,
         .lastname = lastname.Text,
-        .suffix = suffix.Text,
         .email = emailreg.Text,
         .password = passwordreg.Text,
         .age = age.Text,

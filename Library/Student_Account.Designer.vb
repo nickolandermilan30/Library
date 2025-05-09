@@ -26,8 +26,6 @@ Partial Class Student_Account
         firstnametext = New TextBox()
         Label1 = New Label()
         lastnametext = New TextBox()
-        Label3 = New Label()
-        suffixtext = New ComboBox()
         Label4 = New Label()
         emailtext = New TextBox()
         passtext = New TextBox()
@@ -60,7 +58,7 @@ Partial Class Student_Account
         firstnametext.Location = New Point(365, 225)
         firstnametext.Multiline = True
         firstnametext.Name = "firstnametext"
-        firstnametext.Size = New Size(143, 29)
+        firstnametext.Size = New Size(330, 29)
         firstnametext.TabIndex = 9
         ' 
         ' Label1
@@ -83,26 +81,6 @@ Partial Class Student_Account
         lastnametext.Name = "lastnametext"
         lastnametext.Size = New Size(143, 29)
         lastnametext.TabIndex = 11
-        ' 
-        ' Label3
-        ' 
-        Label3.Anchor = AnchorStyles.Top
-        Label3.AutoSize = True
-        Label3.Font = New Font("Rockwell", 20.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(531, 225)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(90, 31)
-        Label3.TabIndex = 13
-        Label3.Text = "Suffix:"
-        ' 
-        ' suffixtext
-        ' 
-        suffixtext.Anchor = AnchorStyles.Top
-        suffixtext.FormattingEnabled = True
-        suffixtext.Location = New Point(636, 231)
-        suffixtext.Name = "suffixtext"
-        suffixtext.Size = New Size(59, 23)
-        suffixtext.TabIndex = 23
         ' 
         ' Label4
         ' 
@@ -260,8 +238,6 @@ Partial Class Student_Account
         Controls.Add(Label5)
         Controls.Add(emailtext)
         Controls.Add(Label4)
-        Controls.Add(suffixtext)
-        Controls.Add(Label3)
         Controls.Add(Label1)
         Controls.Add(lastnametext)
         Controls.Add(Label2)
@@ -276,8 +252,6 @@ Partial Class Student_Account
     Friend WithEvents firstnametext As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents lastnametext As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents suffixtext As ComboBox
     Friend WithEvents Label4 As Label
     Friend WithEvents emailtext As TextBox
     Friend WithEvents passtext As TextBox

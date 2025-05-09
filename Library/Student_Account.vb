@@ -39,7 +39,7 @@ Public Class Student_Account
                         ' Populate fields
                         firstnametext.Text = item.Value.firstname
                         lastnametext.Text = item.Value.lastname
-                        suffixtext.Text = item.Value.suffix
+
                         agetext.Text = item.Value.age
                         emailtext.Text = item.Value.email
                         passtext.Text = item.Value.password
@@ -63,7 +63,6 @@ Public Class Student_Account
         Dim updatedUser As New User With {
             .firstname = firstnametext.Text,
             .lastname = lastnametext.Text,
-            .suffix = suffixtext.Text,
             .email = emailtext.Text,
             .password = passtext.Text,
             .age = agetext.Text
